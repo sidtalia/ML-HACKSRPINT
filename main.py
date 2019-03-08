@@ -28,7 +28,7 @@ def process(img):
 	img = img.astype(np.uint8)
 	return img
 
-data, fs = sf.read('ODESZA - Loyal.wav', dtype='float32')
+data, fs = sf.read('input_1.wav', dtype='float32')
 
 original_shape = data.shape
 print(fs)
