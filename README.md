@@ -18,7 +18,7 @@ An audio file can be seen as an array. 1 second of an audio file generally has 4
 
 I used the deep-dreamer as an adhoc "transformer". 
 
-Original audio, reshaped to 210x210x3 (notice there's no RGB component)
+Original audio, reshaped to 210x210x3 (notice there's very little RGB component)
 
 ![original](https://user-images.githubusercontent.com/24889667/54002272-fd67e600-4173-11e9-9990-bac587a9e047.jpg)
 
