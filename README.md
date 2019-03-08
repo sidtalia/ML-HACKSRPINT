@@ -38,12 +38,17 @@ The applications for this are not limited to entertainment, however, this was cr
 ## HOW TO USE :
 the code is not super user friendly just yet. You have to provide the audio file as a .wav file. The name of the file has to be given in the code itself. This can be changed easily in the future to take the name of the file from command line or if you have a gui, then from the gui. I didn't work on it because of the shortage of time.
 
-Preferred songs : Songs that sound like ODESZA - Loyal
+You will require this package : https://pythonprogramming.net/static/downloads/machine-learning-data/deep_dreaming_start.zip
+extract it and put it in your python working directory. Place the rest of these files in the extracted folder
+
+Preferred song : Songs that sound like ODESZA - Loyal
 
 STEP 1 : 
 in the code, find the line :
 data,fs = sf.read('',dtype='float32')
 and place the name of the file in there along with the path if it isn't in the same directory
+
+Tuning : the person creating the remix will have to adjust the delays/mix timings. This is the only thing they have to do, the rest is done by the algorithm.
 
 STEP 2: 
 execute the code from command line :
