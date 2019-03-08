@@ -45,9 +45,9 @@ and place the name of the file in there along with the path if it isn't in the s
 
 STEP 2: 
 execute the code from command line :
-python gandupadhyay.py
+python main.py
 
 STEP 3:
-done. the audio file will be saved in the same directory as gandupadhyay.py
+done. the audio file will be saved in the same directory as main.py
 
 
