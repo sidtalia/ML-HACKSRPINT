@@ -28,7 +28,7 @@ def process(img):
 	img = img.astype(np.uint8)
 	return img
 
-data, fs = sf.read('input_1.wav', dtype='float32')
+data, fs = sf.read('ODESZA - Loyal.wav', dtype='float32')
 
 original_shape = data.shape
 print(fs)
@@ -37,16 +37,31 @@ side = int(m.sqrt(fs))
 slots = int(data.shape[0]/slot_size)
 output = []
 
+delay = np.array([1,1,2,3,5,8,13,21])
+drop = np.zeros_like(delay)
+for i in range(len(delay)):
+	drop[i] = np.sum(delay[:i+1])+1
+k=0 #initialize k as 0
+print(drop)
+offset = drop[-1]
+
+
 data = conditioner(data)
 data = data[:slots*slot_size]
 for i in range(slots):
 	a = data[i*slot_size:(i+1)*slot_size]
 	orig = a = np.reshape(a,(side,side,3))
 	cv2.imshow('original',a)
-	if(i%2!=0):
+	if(drop[k]==i):
+		k+=1
+		ratio = (k/len(drop))**4
+		if(k==len(drop)):
+			drop+=offset
+		k = k%len(drop)#ensure no out of bound answers
 		a = process(a)
 		kernel = np.array([[-1,-1,-1], [-1,9,-1], [-1,-1,-1]])
 		a = cv2.filter2D(a,-1,kernel)
+		a = (ratio*a)+((1-ratio)*orig)
 	cv2.imshow('remix',a)
 	output.append(a)
 	ch = 0xFF & cv2.waitKey(5) #press ESC key to exit
@@ -58,5 +73,5 @@ out = np.array(output,dtype=np.float32)
 out -= 128
 out /= 128
 out = np.reshape(out,data.shape)
-np.save('test2.npy',out)
-
+np.save('test3.npy',out)
+sf.write('stereo_file.wav', out, fs, 'PCM_24')
