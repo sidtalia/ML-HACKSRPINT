@@ -38,6 +38,8 @@ The applications for this are not limited to entertainment, however, this was cr
 ## HOW TO USE :
 the code is not super user friendly just yet. You have to provide the audio file as a .wav file. The name of the file has to be given in the code itself. This can be changed easily in the future to take the name of the file from command line or if you have a gui, then from the gui. I didn't work on it because of the shortage of time.
 
+Preferred songs : Songs that sound like ODESZA - Loyal
+
 STEP 1 : 
 in the code, find the line :
 data,fs = sf.read('',dtype='float32')
