@@ -26,3 +26,4 @@ transformed audio :
 
 ![transformed](https://user-images.githubusercontent.com/24889667/54002274-02c53080-4174-11e9-95cb-f5cc79db16a3.jpg)
 
+now the results aren't out of this world. Initially, it appears to simply be adding white noise (if you run it over the entire audio file). However, that may not necessarily be the case because in order to construct one RGB image, we look 3 seconds into the future( 3 seconds at a time are transformed ). When it performs a transformation, the transformation at the current time instant is in a way linked to the original value 1 second and 2 second into the future. This effect is more prominent (and appreciable) around beat drops. 
