@@ -18,13 +18,13 @@ An audio file can be seen as an array. 1 second of an audio file generally has 4
 
 I used the deep-dreamer as an adhoc "transformer". 
 
-Original audio, reshaped to 210x210x3. This image represnts a 3 second block of the audio file where each second forms either the R,G or B component (notice that there's very little color in these images. This may be because the "beats" tend to line up in time for the most part).
-
 ![original](https://user-images.githubusercontent.com/24889667/54002272-fd67e600-4173-11e9-9990-bac587a9e047.jpg)
 
-transformed audio. The output retains most of the original pattern but does add some changes and at the same time brings in color. The color (in my opinion) represents the intentional slight mis-alignment of the beats. The blurring of the image adds a bit of noise(god only knows how I got away with that) : 
+Original audio, reshaped to 210x210x3. This image represnts a 3 second block of the audio file where each second forms either the R,G or B component (notice that there's very little color in these images. This may be because the "beats" tend to line up in time for the most part).
 
 ![transformed](https://user-images.githubusercontent.com/24889667/54002274-02c53080-4174-11e9-95cb-f5cc79db16a3.jpg)
+
+transformed audio. The output retains most of the original pattern but does add some changes and at the same time brings in color. The color (in my opinion) represents the intentional slight mis-alignment of the beats. The blurring of the image adds a bit of noise(god only knows how I got away with that)
 
 now the results aren't out of this world. Initially, it appears to simply be adding white noise (if you run it over the entire audio file). However, that may not necessarily be the case because in order to construct one RGB image, we look 3 seconds into the future( 3 seconds at a time are transformed ). When it performs a transformation, the transformation at the current time instant is in a way linked to the original value 1 second and 2 second into the future. This effect is more prominent (and appreciable) around beat drops. 
 
