@@ -14,15 +14,15 @@ Tensorflow's deep dreamer is famous for generating trippy and artistic images fr
 
                                                      transformed image 
 
-An audio file can be seen as an array. 1 second of an audio file generally has 44100 values which is = 210 x 210 ( I am no expert in this field but I'd say they did this to make matrix operations easier for normal sound modifications )
+An audio file can be seen as an array. 1 second of an audio file generally has 44100 values which is = 210 x 210 ( From what I know, this is a complete coincidence.. or is it? (X files theme song starts playing in the background) )
 
 I used the deep-dreamer as an adhoc "transformer". 
 
-Original audio, reshaped to 210x210x3 (notice there's very little RGB component)
+Original audio, reshaped to 210x210x3. This image represnts a 3 second block of the audio file where each second forms the either the R,G or B component (notice that there's very little color in these images. This may be because the "beats" tend to line up in time for the most part).
 
 ![original](https://user-images.githubusercontent.com/24889667/54002272-fd67e600-4173-11e9-9990-bac587a9e047.jpg)
 
-transformed audio : 
+transformed audio. The output retains most of the original pattern but does add some changes and at the same time brings in color. The color (in my opinion) represents the intentional slight mis-alignment of the beats. The blurring of the image adds a bit of noise(god only knows how I got away with that) : 
 
 ![transformed](https://user-images.githubusercontent.com/24889667/54002274-02c53080-4174-11e9-95cb-f5cc79db16a3.jpg)
 
@@ -30,10 +30,11 @@ now the results aren't out of this world. Initially, it appears to simply be add
 
 Do note that the method does not alter the underlying notes of the audio file.
 
+# NOTE:
 For best experience please use bass boosted earphones
 
 ## SCOPE OF USE : 
-The applications for this are not limited to entertainment, however, this was created for the purposes of boosting the entertainment industry. This isn't a perfect end product yet (since I only have no past experience in sound engineering). However, in the future, you could remix your music using AI to introduce new sounds into an already poppy song.  
+The applications for this are not limited to entertainment, however, this was created for the purposes of boosting the entertainment industry. This isn't a perfect end product yet (since I only have 0 hours of past experience in sound engineering). However, in the future, you could remix your music using image based AI to introduce new sounds into an already poppy song.  
 
 ## FUTURE USE :
 Since Google DeepDream itself is a way for running the neural network , it is not tight to a specific architecture. It is an approach that you can achieve by any pre-trained deep convolutional neural network. The network may be trained later to perform more specific alterations while still working with the music as a sequence of images.
