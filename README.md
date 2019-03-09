@@ -18,7 +18,7 @@ An audio file can be seen as an array. 1 second of an audio file generally has 4
 
 I used the deep-dreamer as an adhoc "transformer". 
 
-Original audio, reshaped to 210x210x3. This image represnts a 3 second block of the audio file where each second forms the either the R,G or B component (notice that there's very little color in these images. This may be because the "beats" tend to line up in time for the most part).
+Original audio, reshaped to 210x210x3. This image represnts a 3 second block of the audio file where each second forms either the R,G or B component (notice that there's very little color in these images. This may be because the "beats" tend to line up in time for the most part).
 
 ![original](https://user-images.githubusercontent.com/24889667/54002272-fd67e600-4173-11e9-9990-bac587a9e047.jpg)
 
